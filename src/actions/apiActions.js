@@ -10,6 +10,8 @@ if(process.env.NODE_ENV === "production") {
     hostName = "http://localhost:8080/worldwideprotest/api";
 }
 
+console.log(hostName);
+
 /* export function fetchExampleFromUrl(exampleUrl) {
     return {
         type: types.EXAMPLE,
