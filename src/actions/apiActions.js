@@ -5,7 +5,7 @@ import config from '../config';
 var hostName;
 
 if(process.env.NODE_ENV === "production") {
-    hostName = "http://wwpserver.azurewebsites.net/worldwideprotest/api"
+    hostName = "https://wwpserver.azurewebsites.net/worldwideprotest/api"
 } else { 
     hostName = "http://localhost:8080/worldwideprotest/api";
 }
