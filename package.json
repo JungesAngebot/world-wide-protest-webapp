@@ -21,6 +21,7 @@
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
     "firebase": "^3.7.5",
     "image-webpack-loader": "^3.0.0",
     "jquery": "2.2.3",
@@ -42,6 +43,7 @@
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
     "schema-inspector": "^1.6.8",
+    "svg-url-loader": "^2.0.2",
     "toastr": "^2.1.2",
     "validator": "^6.1.0"
   },

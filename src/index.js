@@ -10,6 +10,7 @@ import configureStore from 'store/configureStore';
 import routes from 'routes';
 import config from 'config';
 import 'styles/ionicons.css';
+import 'styles/icomoon.css';
 import 'styles/styles.less';
 
 const store = configureStore();

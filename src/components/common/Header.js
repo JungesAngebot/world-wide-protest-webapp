@@ -15,7 +15,7 @@ const Header = () => {
 					<li><Link to="/" activeClassName="activeLink">Home</Link></li>
 				</ul>
 			</nav>
-			<header></header>
+			<header id="header-bg"></header>
 		</div>
 	);
 

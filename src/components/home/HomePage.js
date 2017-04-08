@@ -7,6 +7,7 @@ import * as firebase from 'firebase';
 import * as apiActions from 'actions/apiActions';
 import Header from 'components/common/Header';
 import Footer from 'components/common/Footer';
+import EventItem from 'components/common/EventItem';
 
 class HomePage extends Component {
 
@@ -67,14 +68,18 @@ class HomePage extends Component {
 				<Header />
 				Landing Page
 				<div onClick={this.loginWithGoogle}>Login with Google</div>
-				{this.props.api.events.length > 0 && this.props.api.events.map(event => {
-					return (
-						<div key={event.id}>
-							{event.title}
-							{event.description}
-						</div>
-					)
-				})}
+
+				<div className="grid-container">
+					<div className="row">
+
+						{this.props.api.events.length > 0 && this.props.api.events.map(event => {
+							return (
+								<EventItem key={event.id} event={event} />
+							)
+						})}
+
+					</div>
+				</div>
 			
 				<Footer />
 			</div>
