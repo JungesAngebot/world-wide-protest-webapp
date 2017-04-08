@@ -18,12 +18,12 @@ export default {
 		extensions: ['', '.js', '.jsx', '.coffee']
 	},
 	output: {
-		path: __dirname + "/dist", // Note: Physical files are only output by the production task 'npm run build'.
+		path: __dirname + "/public", // Note: Physical files are only output by the production task 'npm run build'.
 		publicPath: config.baseName,
 		filename: "bundle.js",
 	},
 	devServer: {
-		contentBase: './dist'
+		contentBase: './public'
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
@@ -35,7 +35,8 @@ export default {
 	module: {
 		loaders: [
 			{ test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
-			{ test: /(\.css)$/, loader: ExtractTextPlugin.extract("css?sourceMap") },
+			{ test: /(\.css)$/, loader: ExtractTextPlugin.extract("css") },
+			{ test: /\.less$/, loader: "style!css!less" },
 			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
 			{ test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000' },
 			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
