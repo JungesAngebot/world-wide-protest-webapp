@@ -25,7 +25,7 @@ export function getJWT(uid) {
     return dispatch => {
         return new Promise((resolve, reject) => {
 
-            axios.post(config.hostName + "/login", { uid })
+            axios.post(hostName + "/login", { uid })
             .catch(error => {
                 reject(error);
             })
@@ -46,7 +46,7 @@ export function getEvents() {
     return dispatch => {
         return new Promise((resolve, reject) => {
 
-            axios.get(config.hostName + "/events")
+            axios.get(hostName + "/events")
             .catch(error => {
                 // no auth
             })
