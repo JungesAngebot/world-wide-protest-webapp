@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 
 import * as apiActions from 'actions/apiActions';
 import Header from 'components/common/Header';
+import Footer from 'components/common/Footer';
 
 class HomePage extends Component {
 
@@ -74,7 +75,10 @@ class HomePage extends Component {
 						</div>
 					)
 				})}
+			
+				<Footer />
 			</div>
+
 		);
 
 	}

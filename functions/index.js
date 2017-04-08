@@ -8,7 +8,7 @@ var functions = require('firebase-functions');
 // })
 
 
-exports.push = functions.database.ref('/events').onWrite(event => {
+/*exports.push = functions.database.ref('/events').onWrite(event => {
     var eventSnapshot = event.data;
 
 	console.log("created event: " + eventSnapshot);
@@ -48,3 +48,4 @@ admin.messaging().sendToDevice(registrationToken, payload)
 
 	return true;
   });
+*/

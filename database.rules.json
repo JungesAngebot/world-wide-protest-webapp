@@ -1,13 +1,12 @@
 {
   "rules": {
-  	"events": {
-  		".read": true,
-	    ".write": "auth != null"
-  	},
-  	"users": {
-  		".read": "auth != null",
-	    ".write": "auth != null"
-  	}
-    
+    "events": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
   }
 }
