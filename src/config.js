@@ -1,6 +1,5 @@
 export default {
 	baseName: "/",
-	hostName: "http://localhost:8080/worldwideprotest/api",
 	firebase: {
 		apiKey: "AIzaSyDxJ3R44wc3kVMD9imCoUIXzoEyEcwFP9o",
  		authDomain: "world-wide-protest.firebaseapp.com",

@@ -2,6 +2,14 @@ import * as types from './actionTypes';
 import axios from 'axios';
 import config from '../config';
 
+var hostName;
+
+if(process.env.NODE_ENV === "production") {
+    hostName = "http://localhost:8080/worldwideprotest/api";
+} else {
+    hostName = "http://wwpserver.azurewebsites.net/worldwideprotest/api"
+}
+
 /* export function fetchExampleFromUrl(exampleUrl) {
     return {
         type: types.EXAMPLE,
