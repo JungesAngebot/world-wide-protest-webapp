@@ -25,11 +25,34 @@ class HomePage extends Component {
 	}
 
 	componentDidMount() {
-		var location = { lat: 50.5468647, lng: 10.2753689 };
-		var map = new google.maps.Map(document.getElementById("overview-map"), {
-			zoom: 6,
-			center: location
-		});
+		var fallbackLocation = { lat: 50.5468647, lng: 10.2753689 };
+		var infoWindow;
+
+			var map = new google.maps.Map(document.getElementById("overview-map"), {
+				zoom: 6,
+				center: fallbackLocation
+			});
+
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(position => {
+
+			var pos = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			};
+
+			map.setCenter(pos);
+
+			infoWindow = new google.maps.InfoWindow;
+
+			infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+
+			}, () => {
+				// handleLocationError(true, infoWindow, map.getCenter());
+			});
+		}
 	}
 
 	handleFieldChange(e) {

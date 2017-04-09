@@ -18,6 +18,7 @@ class Filter extends Component {
 		};
 		this.toggleFilters = this.toggleFilters.bind(this);
 		this.handleFieldChange = this.handleFieldChange.bind(this);
+		this.scrollToElement = this.scrollToElement.bind(this);
 	}
 
 	toggleFilters() {
