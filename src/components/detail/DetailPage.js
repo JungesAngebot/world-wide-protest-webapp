@@ -6,6 +6,7 @@ import moment from 'moment';
 
 import * as apiActions from 'actions/apiActions';
 import Footer from 'components/common/Footer';
+import Header from 'components/common/Header';
 import EventMap from 'components/common/EventMap';
 
 class HomePage extends Component {
@@ -24,6 +25,7 @@ class HomePage extends Component {
 		let endTime = new Date(event.endTime);
 		return (
 			<div class="details-page">
+				<Header />
 				<div id="detail-header" style={{ backgroundImage: `url(${require("../../styles/img/event-placeholder.jpg")})` }}>
 					<div className="text-gradient">
 						<h1>{event.title}</h1>
@@ -35,9 +37,11 @@ class HomePage extends Component {
 
 						<div className="col-2 meta-wrapper">
 							<div class="meta">
-								<p className="card-info"><i className="icon icon-date"></i>{moment(startTime).format("Do MMMM YYYY HH:mm")} Uhr - {moment(endTime).format("h:mm")} Uhr</p>
-								<p className="card-info info-location"><i className="icon icon-location"></i> Dernsches Gelände, 65185 Wiesbaden, Germany</p>
+
+								<p className="card-info"><i className="icon icon-date"></i>{moment(startTime).format("Do MMMM YYYY h:mm")} Uhr - {moment(endTime).format("h:mm")} Uhr</p>
+								<p className="card-info info-location"><i className="icon icon-location"></i> {event.street} {event.streetNr}, {event.city}, {event.country}</p>
 								<p className="card-info info-cause"><i className="icon icon-cause"></i> Pulse of Europe Wiesbaden</p>
+
 							</div>
 						</div>
 
