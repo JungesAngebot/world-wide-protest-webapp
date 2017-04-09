@@ -83,8 +83,8 @@ class MakeAChange extends Component {
   to : "cIQ70_oZBLY:APA91bHHpSk477H3qHPkrD1aeh2hoFT50zyz8Si5bSPvzhXAlxJ-wpSXM8UxUKMSWCl7PKA7a14DDdtXJ8iP6qN-koWHwa4Cyw2pUofs_rxmzTYAr1V4fw_SBeXTJhcJQOFStURmzCpB",
   priority : "high",
   notification : {
-    body : "We think that the recently added protest 'Karotten für alle Häschen' near to you could be interesting for you.",
-    title : "Karotten für alle Häschen"
+    body : eventObj.description.substring(0,150),
+    title : eventObj.title
   }
 					},{
 						headers: {
