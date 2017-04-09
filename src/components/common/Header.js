@@ -77,7 +77,6 @@ class Header extends Component {
 							{!user ? <li><div className="login-button" onClick={this.loginWithGoogle}>Sign In Via Google</div></li> : null }
 						</ul>
 					</nav>
-					<header id="header-bg"></header>
 				</div>
 			)
 		} else {
