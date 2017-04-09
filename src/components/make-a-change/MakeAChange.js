@@ -84,7 +84,8 @@ class MakeAChange extends Component {
   priority : "high",
   notification : {
     body : eventObj.description.substring(0,150),
-    title : eventObj.title
+    title : eventObj.title,
+	sound: "default"
   }
 					},{
 						headers: {
