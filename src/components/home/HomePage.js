@@ -11,6 +11,8 @@ import EventItem from 'components/common/EventItem';
 import Hero from 'components/common/Hero';
 import Filter from 'components/common/Filter';
 
+let map;
+
 class HomePage extends Component {
 
 	constructor(props) {
@@ -22,10 +24,12 @@ class HomePage extends Component {
 		var fallbackLocation = { lat: 50.5468647, lng: 10.2753689 };
 		var infoWindow;
 
-			var map = new google.maps.Map(document.getElementById("overview-map"), {
-				zoom: 6,
-				center: fallbackLocation
-			});
+		map = new google.maps.Map(document.getElementById("overview-map"), {
+			zoom: 3,
+			center: fallbackLocation
+		});
+
+		console.log(this.props);
 
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(position => {
@@ -59,6 +63,15 @@ class HomePage extends Component {
 	}
 
 	render() {
+		if(this.props.api.events.length > 0) {
+			this.props.api.events.map(event => {
+				let marker = new google.maps.Marker({
+					position: new google.maps.LatLng(event.lat, event.lng),
+					map,
+					title: event.title
+				});
+			});
+		}
 		return (
 			<div>
 				<Header />
