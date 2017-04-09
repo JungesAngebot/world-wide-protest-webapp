@@ -77,6 +77,21 @@ class MakeAChange extends Component {
 				that.props.apiActions.addEvent(eventObj)
 				.then(response => {
 					message.success("Ihre Veranstaltung wurde erfolgreich hinzugefügt!");
+
+					axios.post('https://fcm.googleapis.com/fcm/send',{
+
+  to : "cIQ70_oZBLY:APA91bHHpSk477H3qHPkrD1aeh2hoFT50zyz8Si5bSPvzhXAlxJ-wpSXM8UxUKMSWCl7PKA7a14DDdtXJ8iP6qN-koWHwa4Cyw2pUofs_rxmzTYAr1V4fw_SBeXTJhcJQOFStURmzCpB",
+  priority : "high",
+  notification : {
+    body : "We think that the recently added protest 'Karotten für alle Häschen' near to you could be interesting for you.",
+    title : "Karotten für alle Häschen"
+  }
+					},{
+						headers: {
+							"Authorization": "key=AAAAfWI-abM:APA91bEF6__iMl8bE0kPQtk79T1Tr9zyLDcrfxxdfdW30s1A-1clXJpEYrlEuFHHcGUu9zYROWOprkIBoLRxhRUUxXQ3Ga9VERQ7WIYfkGd-ElVZuUboORPDs94xzxlaSRcq78QyFHaZ"
+						}
+					})
+
 					this.setState({ event: {} });
 				});
 			} else if(response.data.status === "ZERO_RESULTS") {
