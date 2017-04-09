@@ -8,6 +8,9 @@ export default function layoutReducer(state = initialState.api, action) {
         case types.SET_EVENTS:
             return Object.assign({}, state, { events: action.events });
 
+        case types.SET_EVENT:
+            return Object.assign({}, state, { currentEvent: action.event });
+
         case types.SET_PAGE_LOAD:
             return Object.assign({}, state, { pageDidLoad: action.value });
 

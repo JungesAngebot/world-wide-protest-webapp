@@ -60,10 +60,33 @@ export function getEvents() {
     }
 }
 
+export function getEventById(id) {
+    return dispatch => {
+        return new Promise((resolve, reject) => {
+
+            axios.get(hostName + "/events/" + id)
+            .catch(error => {
+                // handle error
+            })
+            .then(response => {
+                resolve(response);
+            });
+
+        });
+    }
+}
+
 export function setEvents(events) {
     return {
         type: types.SET_EVENTS,
         events
+    };
+}
+
+export function setEvent(event) {
+    return {
+        type: types.SET_EVENT,
+        event
     };
 }
 

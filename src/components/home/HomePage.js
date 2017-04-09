@@ -62,15 +62,12 @@ class HomePage extends Component {
 	}
 
 	render() {
-		console.log(this.props);
 		return (
 			<div>
 				<Header />
-				Landing Page
-				<div onClick={this.loginWithGoogle}>Login with Google</div>
 
 				<div className="grid-container">
-					<div className="row">
+					<div className="row no-margin" style={{ marginTop: "1rem" }}>
 
 						{this.props.api.events.length > 0 && this.props.api.events.map(event => {
 							return (

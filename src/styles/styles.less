@@ -90,8 +90,7 @@ nav ul li a:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding: 1rem 2rem;
 	background: #fff;
 }
 
@@ -118,38 +117,6 @@ nav ul li a:hover {
 
 #social-nav ul li a {
 	font-size: 160%;
-}
-
-// CARD
-.card-wrapper {
-	background-color: white;
-	margin-bottom: 1rem;
-}
-
-.card-image {
-	display: block;
-}
-
-.card-image img {
-	max-width: 100%;
-}
-
-.card-content-wrapper {
-	padding: 1rem;
-}
-
-.card-content {
-	// display: inline-block;
-	margin-bottom: 1rem;
-}
-
-.card-info {
-	margin-bottom: 0.35rem;
-}
-
-.card-info i {
-	font-size: 1.5rem;
-	vertical-align: middle;
 }
 
 // LOADING SPINNER
@@ -295,11 +262,68 @@ nav ul li a:hover {
 	padding: 0;
 }
 
+// CARD
+.card-wrapper {
+	background-color: white;
+	margin-bottom: 1rem;
+	color: #444;
+}
+
+.card-image {
+	display: block;
+}
+
+.card-image img {
+	max-width: 100%;
+	display: block;
+}
+
+.card-content-wrapper {
+	padding: 1.35rem;
+}
+
+.card-content {
+	// display: inline-block;
+	margin-bottom: 1rem;
+}
+
+.card-info {
+	margin-bottom: 0.35rem;
+}
+
+.card-info i {
+	font-size: 1.5rem;
+	vertical-align: middle;
+}
+
+// DETAILS
+#detail-header {
+	height: 400px;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	color: white;
+	position: relative;
+}
+
+.text-gradient {
+	background: linear-gradient(to top, #000 0%, transparent 100%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px 0 15px 15px;
+}
+
 @media screen and (max-width: 800px) {
 
     [class*='col-'] {
         width: 100%;
     }
+
+	.grid-container {
+		width: 92.5%;
+	}
 
 	.mobile-center {
 		text-align: center;
