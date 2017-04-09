@@ -30,16 +30,20 @@ class HomePage extends Component {
 				</div>
 				<div className="grid-container meta-container">
 
-					<div className="col-2 meta-wrapper">
-						<div class="meta">
-							<p className="card-info"><i className="icon icon-date"></i>{moment(startTime).format("Do MMMM YYYY h:mm")} Uhr - {moment(endTime).format("h:mm")} Uhr</p>
-							<p className="card-info info-location"><i className="icon icon-location"></i> Dernsches Gelände, 65185 Wiesbaden, Germany</p>
-							<p className="card-info info-cause"><i className="icon icon-cause"></i> Pulse of Europe Wiesbaden</p>
-						</div>
-					</div>
+					<div className="row no-margin">
 
-					<div className="col-4">
-						{event.description}
+						<div className="col-2 meta-wrapper">
+							<div class="meta">
+								<p className="card-info"><i className="icon icon-date"></i>{moment(startTime).format("Do MMMM YYYY h:mm")} Uhr - {moment(endTime).format("h:mm")} Uhr</p>
+								<p className="card-info info-location"><i className="icon icon-location"></i> Dernsches Gelände, 65185 Wiesbaden, Germany</p>
+								<p className="card-info info-cause"><i className="icon icon-cause"></i> Pulse of Europe Wiesbaden</p>
+							</div>
+						</div>
+
+						<div className="col-4">
+							{event.description}
+						</div>
+
 					</div>
 
 				</div>
