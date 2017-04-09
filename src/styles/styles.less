@@ -68,13 +68,34 @@ nav ul li a {
 nav ul li a,
 nav ul li a:visited,
 nav ul li a:hover {
-	color: white;
+	color: @grey;
 	font-weight: 400;
 	text-decoration: none;
 }
 
 nav ul li a:hover {
 	
+}
+
+.login-button {
+	display: block;
+	background-color: white;
+	color: grey;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1.1rem;
+	border-radius: 0.25rem;
+	margin: 0.25rem auto;
+	padding: 0.75rem 0.5rem;
+	width: 75%;
+	text-align: center;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.login-button:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	cursor: pointer;
 }
 
 // HEADER
@@ -355,6 +376,66 @@ nav ul li a:hover {
 	margin-top: 1rem;
 }
 
+// INPUT
+.input-label-wrapper {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+}
+.input-label-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+.filter-input {
+  font-size: 100%;
+  border: none;
+  padding: 15px 15px 15px 50px;
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  transition: padding .1s linear;
+}
+.filter-input:focus, .filter-input:active {
+  padding-left: 35px;
+}
+.filter-label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.filter-label .icon {
+  font-size: 180%;
+  transition: font-size .1s linear;
+}
+.filter-input:focus + .filter-label .icon, .filter-input:active + .filter-label .icon {
+  font-size: 120%;
+  color: @first-color;
+}
+
+
+// LOGIN
+.login #content {
+  padding-top: 96px;
+}
+.login .divider {
+  margin: 20px 0;
+  border: 2px solid @lighter-grey;
+}
+.btn-login {
+  font-size: 100%;
+  border: none;
+  padding: 15px 15px 15px 50px;
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #fff;
+}
+.btn-facebook {
+  background: #3b5a9a url("http://192.168.204.251:8887/img/facebook-btn-logo.png") no-repeat 10px center;
+}
+
+
 @media screen and (max-width: 800px) {
 
     [class*='col-'] {
@@ -391,6 +472,34 @@ nav ul li a:hover {
 
 	.desktop-only {
 		display: none;
+	}
+
+	// Nav
+	nav {
+		background-color: white;
+		padding: 0.25rem 1rem;
+	}
+
+	nav #logo {
+		max-width: 115px;
+	}
+
+	nav ul {
+		position: absolute;
+		width: 100%;
+		margin-left: -1rem;
+		top: 56px;
+		background-color: white;
+	}
+
+	nav ul li {
+		display: block;
+	}
+
+	nav ul li a {
+		text-transform: uppercase;
+		font-size: 1rem;
+		padding: 1rem;
 	}
 
 }

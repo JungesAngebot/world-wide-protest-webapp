@@ -6,6 +6,7 @@ import moment from 'moment';
 
 import * as apiActions from 'actions/apiActions';
 import Footer from 'components/common/Footer';
+import EventMap from 'components/common/EventMap';
 
 class HomePage extends Component {
 
@@ -43,6 +44,8 @@ class HomePage extends Component {
 						<div className="col-4">
 							{event.description}
 						</div>
+
+						<EventMap event={event} />
 
 					</div>
 

@@ -20,7 +20,6 @@ class HomePage extends Component {
 			}
 		}
 		this.handleFieldChange = this.handleFieldChange.bind(this);
-		this.loginWithGoogle = this.loginWithGoogle.bind(this);
 	}
 
 	componentDidMount() {
@@ -34,31 +33,6 @@ class HomePage extends Component {
 		// kundeState[field] = event.target.value;
 		// this.checkFields(kundeState);
 		// return this.setState({ kunde: kundeState });
-	}
-
-	loginWithGoogle() {
-		let provider = new firebase.auth.GoogleAuthProvider();
-		let that = this;
-
-		firebase.auth().signInWithPopup(provider)
-		.catch(error => {
-
-		})
-		.then(result => {
-			let token = result.credential.accessToken;
-			let user = result.user;
-
-			that.props.apiActions.getJWT(user.uid).then(token => {
-
-				console.log(token);
-				
-				that.props.apiActions.getEvents(token)
-				.then(response => {
-					that.props.apiActions.setEvents(response.data);
-				});
-			
-			});
-		});
 	}
 
 	render() {
