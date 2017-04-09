@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import * as firebase from 'firebase';
 import * as apiActions from 'actions/apiActions';
+import moment from 'moment';
 
 import configureStore from 'store/configureStore';
 import routes from 'routes';
@@ -15,6 +16,9 @@ import 'styles/styles.less';
 
 const store = configureStore();
 firebase.initializeApp(config.firebase);
+
+// TODO: Dynamisch und so 'n Stuff.
+moment.locale("de");
 
 Promise.all([
 	store.dispatch(apiActions.getEvents())
