@@ -6,6 +6,8 @@ import { Router, browserHistory } from 'react-router';
 import * as firebase from 'firebase';
 import * as apiActions from 'actions/apiActions';
 import moment from 'moment';
+import { LocaleProvider } from 'antd';
+import enUS from 'antd/lib/locale-provider/en_US';
 
 import configureStore from 'store/configureStore';
 import routes from 'routes';
@@ -29,7 +31,9 @@ Promise.all([
 	});
 
 render(
-	<Provider store={store}>
-		<Router history={browserHistory} routes={routes(store)} />
-	</Provider>, document.getElementById("app")
+	<LocaleProvider locale={enUS}>
+		<Provider store={store}>
+			<Router history={browserHistory} routes={routes(store)} />
+		</Provider>
+	</LocaleProvider>, document.getElementById("app")
 );

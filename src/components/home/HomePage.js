@@ -39,6 +39,7 @@ class HomePage extends Component {
 		return (
 			<div>
 				<Header />
+				<header id="header-bg"></header>
 
 				<div className="grid-container">
 					<div className="row no-margin" style={{ marginTop: "1rem" }}>

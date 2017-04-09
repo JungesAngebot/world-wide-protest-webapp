@@ -72,9 +72,9 @@ class Header extends Component {
 						<img src={logo} alt="World Wide Protest" id="logo" />
 						<ul>
 							<li><Link to="/" activeClassName="activeLink">Home</Link></li>
-							<li><Link to="/" activeClassName="activeLink">Home</Link></li>
-							<li><Link to="/" activeClassName="activeLink">Home</Link></li>
-							<li><Link to="/" activeClassName="activeLink">Home</Link></li>
+							<li><Link to="/about-us" activeClassName="activeLink">About Us</Link></li>
+							<li><Link to="/make-a-change" activeClassName="activeLink">Make A Change</Link></li>
+							{!user ? <li><div className="login-button" onClick={this.loginWithGoogle}>Sign In Via Google</div></li> : null }
 						</ul>
 					</nav>
 					<header id="header-bg"></header>
@@ -97,15 +97,14 @@ class Header extends Component {
 								return (
 									<ul style={{ height: value.h, overflow: "hidden" }}>
 										<li><Link to="/" activeClassName="activeLink">Home</Link></li>
-										<li><Link to="/" activeClassName="activeLink">About Us</Link></li>
-										<li><Link to="/" activeClassName="activeLink">Make A Change</Link></li>
+										<li><Link to="/about-us" activeClassName="activeLink">About Us</Link></li>
+										<li><Link to="/make-a-change" activeClassName="activeLink">Make A Change</Link></li>
 										{!user ? <li><div className="login-button" onClick={this.loginWithGoogle}>Sign In Via Google</div></li> : null }
 									</ul>
 								)
 							}}
 						</Motion>
 					</nav>
-					<header id="header-bg"></header>
 				</div>
 			)
 		}

@@ -76,6 +76,23 @@ export function getEventById(id) {
     }
 }
 
+export function addEvent(event) {
+    return dispatch => {
+        return new Promise((resolve, reject) => {
+
+            axios.post(hostName + "/events/add", event, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } })
+            .catch(error => {
+                console.log(error);
+                console.log(error.response);
+            })
+            .then(response => {
+                resolve(response);
+            });
+
+        });
+    }
+}
+
 export function setEvents(events) {
     return {
         type: types.SET_EVENTS,
