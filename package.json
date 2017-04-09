@@ -7,7 +7,7 @@
     "clean-dist": "npm run remove-dist && mkdir public",
     "remove-dist": "node_modules/.bin/rimraf ./public",
     "build:html": "babel-node tools/buildHtml.js",
-    "prebuild": "npm-run-all clean-dist build:html",
+    "prebuild": "npm-run-all build:html",
     "build": "babel-node tools/build.js",
     "postbuild": "babel-node tools/distServer.js"
   },
