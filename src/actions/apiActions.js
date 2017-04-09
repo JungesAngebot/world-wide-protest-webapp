@@ -4,11 +4,13 @@ import config from '../config';
 
 var hostName;
 
-if(process.env.NODE_ENV === "production") {
+/* if(process.env.NODE_ENV === "production") {
     hostName = "https://wwpserver.azurewebsites.net/worldwideprotest/api"
 } else { 
     hostName = "http://localhost:8080/worldwideprotest/api";
-}
+} */
+
+hostName = "https://wwpserver.azurewebsites.net/worldwideprotest/api";
 
 console.log(hostName);
 

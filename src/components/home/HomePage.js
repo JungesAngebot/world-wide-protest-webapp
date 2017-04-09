@@ -8,6 +8,8 @@ import * as apiActions from 'actions/apiActions';
 import Header from 'components/common/Header';
 import Footer from 'components/common/Footer';
 import EventItem from 'components/common/EventItem';
+import Hero from 'components/common/Hero';
+import Filter from 'components/common/Filter';
 
 class HomePage extends Component {
 
@@ -23,7 +25,11 @@ class HomePage extends Component {
 	}
 
 	componentDidMount() {
-
+		var location = { lat: 50.5468647, lng: 10.2753689 };
+		var map = new google.maps.Map(document.getElementById("overview-map"), {
+			zoom: 6,
+			center: location
+		});
 	}
 
 	handleFieldChange(e) {
@@ -39,7 +45,11 @@ class HomePage extends Component {
 		return (
 			<div>
 				<Header />
-				<header id="header-bg"></header>
+				<Hero />
+				<div className="col-6" style={{ padding: "17px 17px 0rem 17px" }}>
+					<Filter />
+				</div>
+				<div id="overview-map"></div>
 
 				<div className="grid-container">
 					<div className="row no-margin" style={{ marginTop: "1rem" }}>

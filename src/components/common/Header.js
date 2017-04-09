@@ -11,6 +11,8 @@ import logo from '../../styles/img/logo_white.png';
 import logoMobile from '../../styles/img/logo.png';
 import * as apiActions from 'actions/apiActions';
 
+import logoSvg from '../../styles/img/wwp-logo.svg';
+
 class Header extends Component {
 
 	constructor(props) {
@@ -69,12 +71,12 @@ class Header extends Component {
 			return (
 				<div>
 					<nav>
-						<img src={logo} alt="World Wide Protest" id="logo" />
+						<img src={logoSvg} alt="World Wide Protest" id="logo" />
 						<ul>
 							<li><Link to="/" activeClassName="activeLink">Home</Link></li>
 							<li><Link to="/about-us" activeClassName="activeLink">About Us</Link></li>
 							<li><Link to="/make-a-change" activeClassName="activeLink">Make A Change</Link></li>
-							{!user ? <li><div className="login-button" onClick={this.loginWithGoogle}>Sign In Via Google</div></li> : null }
+							{!user ? <li><div className="login-button" onClick={this.loginWithGoogle}>Sign In Via Google</div></li> : <b>Welcome back, {user.displayName}!</b> }
 						</ul>
 					</nav>
 				</div>
@@ -85,20 +87,20 @@ class Header extends Component {
 					"nav-active": this.state.navToggled
 				})}>
 					<nav>
-						<img src={logoMobile} alt="World Wide Protest" id="logo" />
+						<img src={logoSvg} alt="World Wide Protest" id="logo" />
 						<button style={{ marginTop: "3px" }} onClick={this.toggleNav} id="toggle-nav" className="hamburger hamburger--spin" type="button">
 							<span className="hamburger-box">
 								<span className="hamburger-inner"></span>
 							</span>
 						</button>
-						<Motion style={{ h: spring(this.state.navToggled ? (!user ? 74 * 3 + 25 : 74 * 2 + 25)  : 0) }}>
+						<Motion style={{ h: spring(this.state.navToggled ? (!user ? 74 * 4 + 15 : 74 * 3 + 15)  : 0) }}>
 							{value => {
 								return (
 									<ul style={{ height: value.h, overflow: "hidden" }}>
 										<li><Link to="/" activeClassName="activeLink">Home</Link></li>
 										<li><Link to="/about-us" activeClassName="activeLink">About Us</Link></li>
 										<li><Link to="/make-a-change" activeClassName="activeLink">Make A Change</Link></li>
-										{!user ? <li><div className="login-button" onClick={this.loginWithGoogle}>Sign In Via Google</div></li> : null }
+										{!user ? <li><div className="login-button" onClick={this.loginWithGoogle}>Sign In Via Google</div></li> : <div className="user-login">Welcome back, <b>{user.displayName}</b>!</div> }
 									</ul>
 								)
 							}}

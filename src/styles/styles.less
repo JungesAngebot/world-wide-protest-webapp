@@ -35,7 +35,7 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	color: white;
-	padding: 0.5rem 2rem;
+	padding: 0.25rem 2rem;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -155,6 +155,81 @@ nav ul li a:hover {
 
 #social-nav ul li a {
 	font-size: 160%;
+}
+
+// HERO
+#hero {
+    background: @grey url("img/protest_header_pic.jpg") no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20px;
+}
+
+.hero-content .inner {
+    background: rgba(255, 255, 255, .8);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.hero-content .inner h1 {
+    margin: 0;
+    font-size: 180%;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn-block {
+    display: block;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    background: @first-color;
+    margin: 20px auto 0;
+    padding: 8px 8px 10px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+.btn.full-width {
+    width: 100%;
+}
+
+// FILTER
+#filter {
+    margin-bottom: 20px;
+}
+
+#filter .active-settings {
+    font-size: 100%;
+    border: none;
+    padding: 15px 15px 13px 9px;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    text-align: left;
+    background: #fff;
+}
+
+#filter .active-settings .icon {
+    font-size: 160%;
+    vertical-align: sub;
+    margin-right: 5px;
+}
+
+#filter-settings {
+	// display: none;
+	overflow: hidden;
+}
+
+// GOOGLE MAP
+#overview-map {
+	width: 100%;
+	height: 300px;
 }
 
 // LOADING SPINNER
@@ -493,7 +568,7 @@ nav ul li a:hover {
 	// Nav
 	nav {
 		background-color: white;
-		padding: 0.25rem 1rem;
+		padding: 1rem;
 	}
 
 	nav #logo {
@@ -504,7 +579,7 @@ nav ul li a:hover {
 		position: absolute;
 		width: 100%;
 		margin-left: -1rem;
-		top: 56px;
+		top: 100%;
 		background-color: white;
 		z-index: 10;
 	}
@@ -517,6 +592,14 @@ nav ul li a:hover {
 		text-transform: uppercase;
 		font-size: 1rem;
 		padding: 1rem;
+	}
+
+	.user-login {
+		color: @grey;
+		padding-left: 1rem;
+		padding-top: 1rem;
+		text-transform: uppercase;
+		font-size: 1rem;
 	}
 
 }
