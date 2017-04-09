@@ -16,7 +16,7 @@ const EventItem = ({ event }) => {
 				<div className="col-4 card-content-wrapper">
 					<h2 className="card-title">{event.title}</h2>
 					<p className="card-content">{event.description.substring(0, 150)}...</p>
-					<p className="card-info"><i className="icon icon-date"></i> {moment(event.startTime).format("Do MMMM YYYY h:mm")}</p>
+					<p className="card-info"><i className="icon icon-date"></i> {moment(event.startTime).format("Do MMMM YYYY HH:mm")}</p>
 					<p className="card-info"><i className="icon icon-location"></i> {event.city}, {event.country}</p>
 				</div>
 
