@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import { DatePicker } from 'antd';
+import { DatePicker, message } from 'antd';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -76,10 +76,14 @@ class MakeAChange extends Component {
 
 				that.props.apiActions.addEvent(eventObj)
 				.then(response => {
-					console.log("geschafft!", response);
+					message.success("Ihre Veranstaltung wurde erfolgreich hinzugefügt!");
+					this.setState({ event: {} });
 				});
+			} else if(response.data.status === "ZERO_RESULTS") {
+				message.error("Bitte überprüfen Sie ihre Eingaben.")
 			} else {
 				// :(
+				console.error(response);
 			}
 
 		});
@@ -99,49 +103,49 @@ class MakeAChange extends Component {
 		return (
 			<div>
 				<Header />
-				<div className="grid-container" style={{ marginTop: "72px" }}>
+				<div className="grid-container" style={{ marginTop: "95px" }}>
 
 					<h1 style={{ color: "#444", textAlign: "center", fontSize: "2.25rem", textTransform: "uppercase" }}>Make A Change</h1>
 
 					<div className="row">
 
 						<span className="input-label-wrapper">
-							<input className="filter-input" type="text" name="title" placeholder="Title" onChange={this.handleFieldChange} />
+							<input className="filter-input" type="text" name="title" placeholder="Title" value={this.state.event.title} onChange={this.handleFieldChange} />
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>
 						</span>
 
 						<span className="input-label-wrapper">
-							<textarea className="filter-input" rows="3" name="description" onChange={this.handleFieldChange} placeholder="Description"></textarea>
+							<textarea className="filter-input" rows="3" name="description" value={this.state.event.description} onChange={this.handleFieldChange} placeholder="Description"></textarea>
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>
 						</span>
 
 						<span className="input-label-wrapper">
-							<input className="filter-input" type="text" name="city" placeholder="City" onChange={this.handleFieldChange} />
+							<input className="filter-input" type="text" name="city" placeholder="City" value={this.state.event.city} onChange={this.handleFieldChange} />
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>
 						</span>
 
 						<span className="input-label-wrapper">
-							<input className="filter-input" type="text" name="street" placeholder="Street" onChange={this.handleFieldChange} />
+							<input className="filter-input" type="text" name="street" placeholder="Street" value={this.state.event.street} onChange={this.handleFieldChange} />
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>
 						</span>
 
 						<span className="input-label-wrapper">
-							<input className="filter-input" type="text" name="streetNr" placeholder="Street Number" onChange={this.handleFieldChange} />
+							<input className="filter-input" type="text" name="streetNr" placeholder="Street Number" value={this.state.event.streetNr} onChange={this.handleFieldChange} />
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>
 						</span>
 
 						<span className="input-label-wrapper">
-							<input className="filter-input" type="text" name="country" placeholder="Country" onChange={this.handleFieldChange} />
+							<input className="filter-input" type="text" name="country" placeholder="Country" value={this.state.event.country} onChange={this.handleFieldChange} />
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>
@@ -166,14 +170,14 @@ class MakeAChange extends Component {
 						/>
 
 						<span className="input-label-wrapper">
-							<input className="filter-input" type="text" name="topic" placeholder="Topic" onChange={this.handleFieldChange} />
+							<input className="filter-input" type="text" name="topic" placeholder="Topic" value={this.state.event.topic} onChange={this.handleFieldChange} />
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>
 						</span>
 
 						<span className="input-label-wrapper">
-							<input className="filter-input" type="text" name="tags" placeholder="Tags" onChange={this.handleFieldChange} />
+							<input className="filter-input" type="text" name="tags" placeholder="Tags" value={this.state.event.tags} onChange={this.handleFieldChange} />
 							<label className="filter-label" for="input-user-mail">
 								<span className="icon icon-user"></span>
 							</label>

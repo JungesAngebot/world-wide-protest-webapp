@@ -88,6 +88,7 @@ export function addEvent(event) {
                 console.log(error.response);
             })
             .then(response => {
+                console.log("API ADD EVENT ACTION");
                 resolve(response);
             });
 
