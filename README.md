@@ -7,9 +7,10 @@ We use ReactJS as our User Interface Library in combination with Redux for state
 * NodeJS
 * npm
 
-### Run / Install / Build
+### Run / Install / Build / Deploy
 1. Open the source directory.
-2. Run ```npm install```
-3. Setup the config file located in ```src/config.js```
-4. Start the dev server with ```npm run start```
-5. Bundle the files for production with ```npm run build```
+2. Run `npm install`.
+3. Setup the config file located in `src/config.js`.
+4. Start the dev server with `npm run start`.
+5. Bundle the files for production with `npm run build`.
+6. Deploy on FireBase with `firebase deploy`.
