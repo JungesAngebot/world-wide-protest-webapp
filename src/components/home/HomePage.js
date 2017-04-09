@@ -15,12 +15,6 @@ class HomePage extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			form: {
-				username: "",
-				password: ""
-			}
-		}
 		this.handleFieldChange = this.handleFieldChange.bind(this);
 	}
 

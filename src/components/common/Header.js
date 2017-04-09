@@ -93,7 +93,7 @@ class Header extends Component {
 								<span className="hamburger-inner"></span>
 							</span>
 						</button>
-						<Motion style={{ h: spring(this.state.navToggled ? (!user ? 74 * 4 + 15 : 74 * 3 + 15)  : 0) }}>
+						<Motion style={{ h: spring(this.state.navToggled ? (!user ? 74 * 3 + 15 : 74 * 3 + 15)  : 0) }}>
 							{value => {
 								return (
 									<ul style={{ height: value.h, overflow: "hidden" }}>
