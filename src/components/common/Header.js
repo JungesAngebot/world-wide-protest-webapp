@@ -71,7 +71,7 @@ class Header extends Component {
 			return (
 				<div>
 					<nav>
-						<Link to="/"><img src={logoSvg} alt="World Wide Protest" id="logo" /></Link>
+						<Link to="/" style={{ minWidth: "115px" }}><img src={logoSvg} alt="World Wide Protest" id="logo" /></Link>
 						<ul>
 							<li><Link to="/" activeClassName="activeLink">Home</Link></li>
 							<li><Link to="/about-us" activeClassName="activeLink">About Us</Link></li>
@@ -87,7 +87,7 @@ class Header extends Component {
 					"nav-active": this.state.navToggled
 				})}>
 					<nav>
-						<Link to="/"><img src={logoSvg} alt="World Wide Protest" id="logo" /></Link>
+						<Link to="/" style={{ minWidth: "115px" }}><img src={logoSvg} alt="World Wide Protest" id="logo" /></Link>
 						<button style={{ marginTop: "3px" }} onClick={this.toggleNav} id="toggle-nav" className="hamburger hamburger--spin" type="button">
 							<span className="hamburger-box">
 								<span className="hamburger-inner"></span>
