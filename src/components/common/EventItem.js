@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import moment from 'moment';
 
 const EventItem = ({ event }) => {
 	console.log(event);
@@ -13,7 +14,7 @@ const EventItem = ({ event }) => {
 				<div className="col-4 card-content-wrapper">
 					<h2 className="card-title">{event.title}</h2>
 					<p className="card-content">{event.description}</p>
-					<p className="card-info"><i className="icon icon-date"></i> 09.04.2017</p>
+					<p className="card-info"><i className="icon icon-date"></i> {moment(event.startTime).format("Do MMMM YYYY h:mm")}</p>
 					<p className="card-info"><i className="icon icon-location"></i> Wiesbaden, Germany</p>
 				</div>
 
