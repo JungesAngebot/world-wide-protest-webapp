@@ -291,12 +291,20 @@ nav ul li a:hover {
 	margin-bottom: 0.35rem;
 }
 
+.card-info:last-child {
+	margin-bottom: none;
+}
+
 .card-info i {
 	font-size: 1.5rem;
-	vertical-align: middle;
+	vertical-align: text-bottom;
 }
 
 // DETAILS
+.details-page {
+
+}
+
 #detail-header {
 	height: 400px;
 	width: 100%;
@@ -315,6 +323,18 @@ nav ul li a:hover {
     padding: 15px 0 15px 15px;
 }
 
+.meta .icon {
+	margin-right: 1rem;
+}
+
+.meta-container {
+	width: 100%;
+}
+
+.meta-wrapper {
+	background-color: white;
+}
+
 @media screen and (max-width: 800px) {
 
     [class*='col-'] {
@@ -323,6 +343,10 @@ nav ul li a:hover {
 
 	.grid-container {
 		width: 92.5%;
+	}
+
+	.meta-container {
+		width: 100%;
 	}
 
 	.mobile-center {
